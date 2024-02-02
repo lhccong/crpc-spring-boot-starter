@@ -28,7 +28,7 @@ public class CRpcServerAutoConfiguration implements InitializingBean, Applicatio
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        Server server = null;
+        Server server;
         Map<String, Object> beanMap = applicationContext.getBeansWithAnnotation(CRpcService.class);
         if (beanMap.size() == 0) {
             //说明当前应用内部不需要对外暴露服务
